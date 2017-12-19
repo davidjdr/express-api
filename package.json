@@ -1,0 +1,28 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "Express API Test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/davidjdr/express-api.git"
+  },
+  "author": "David De Freitas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidjdr/express-api/issues"
+  },
+  "homepage": "https://github.com/davidjdr/express-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.13.3"
+  }
+}
