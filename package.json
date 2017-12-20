@@ -21,7 +21,8 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.13.7",
-    "swagger-ui": "^3.7.0"
+    "swagger-jsdoc": "^1.9.7",
+    "swagger-ui-express": "^2.0.13"
   },
   "devDependencies": {
     "nodemon": "^1.13.3"
