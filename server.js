@@ -1,5 +1,5 @@
 //importamos express
-var express = require('express'),
+let express = require('express'),
 //generamos una app
     app = express(),
 //importamos bodyParser
@@ -11,18 +11,18 @@ var express = require('express'),
     swaggerUi = require('swagger-ui-express');
 
 // swagger definition
-var swaggerDefinition = {
+let swaggerDefinition = {
     info: {
         title: 'Node Swagger API',
         version: '1.0.0',
-        description: 'Demonstrating how to describe a RESTful API with Swagger',
+        description: 'Demonstrating how to describe a RESTful API with Swagger'
     },
     host: 'localhost:3000',
     basePath: '/'
 };
 
 // options for the swagger docs
-var options = {
+let options = {
     // import swaggerDefinitions
     swaggerDefinition: swaggerDefinition,
     // path to the API docs
@@ -30,7 +30,7 @@ var options = {
 };
 
 // initialize swagger-jsdoc
-var swaggerSpec = swaggerJSDoc(options);
+let swaggerSpec = swaggerJSDoc(options);
 
 app.get('/swagger.json', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
@@ -46,12 +46,12 @@ mongoose.connect('mongodb://localhost/eventdb', {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
-var routes = require('./api/routes/eventRoutes');
+let routes = require('./api/routes/eventRoutes');
 
 //registro la ruta
 routes(app);
 //habilitado servidor en puerto 3000
-app.listen(port, function() {
+let server = app.listen(port, function() {
 	console.log('Express API escuchando, puerto 3000');
 });
 
@@ -60,3 +60,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' no encontrado'})
 });
+
+module.exports = server;

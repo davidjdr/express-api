@@ -20,6 +20,21 @@ module.exports = function(app) {
 	app.route('/events')
 	.get(eventCtrl.listAllEvents);
 
+    /**
+     * @swagger
+     * /api/events:
+     *   post:
+     *     tags:
+     *       - Events
+     *     description: Insert one event
+     *     produces:
+     *       - application/json
+     *     responses:
+     *       200:
+     *         description: events
+     *     #    schema:
+     *      #     $ref: '#/definitions/Event'
+     */
 	app.route('/events')
 	.post(eventCtrl.createEvent);
 
